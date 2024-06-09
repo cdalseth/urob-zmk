@@ -95,13 +95,11 @@ done
 [[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="$WINHOME/Downloads"
 [[ -z $LOG_DIR ]] && LOG_DIR="/tmp"
 
-[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="$HOME/zmk"
-[[ -z $HOST_MODULES_DIR ]] && HOST_MODULES_DIR="$HOME/zmk-modules"
-[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="$HOME/zmk-config"
+[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="$HOME/git/zmk"
+[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="$HOME/git/urob-zmk"
 
-[[ -z $DOCKER_ZMK_DIR ]] && DOCKER_ZMK_DIR="/workspace/zmk"
-[[ -z $DOCKER_MODULES_DIR ]] && DOCKER_MODULES_DIR="/workspace/zmk-modules"
-[[ -z $DOCKER_CONFIG_DIR ]] && DOCKER_CONFIG_DIR="/workspace/zmk-config"
+[[ -z $DOCKER_ZMK_DIR ]] && DOCKER_ZMK_DIR="/workspace/git/zmk"
+[[ -z $DOCKER_CONFIG_DIR ]] && DOCKER_CONFIG_DIR="/workspace/git/urob-zmk"
 
 [[ -z $BOARDS ]] && BOARDS="$(yq -r '.include[].board' $HOST_CONFIG_DIR/build.yaml)"
 [[ -z $MODULES ]] && MODULES="$(yq -r '.manifest.projects[].name |
@@ -110,7 +108,7 @@ done
 [[ -z $CLEAR_CACHE ]] && CLEAR_CACHE="false"
 
 DOCKER_IMG="zmkfirmware/zmk-dev-arm:$ZEPHYR_VERSION"
-DOCKER_BIN="$SUDO podman"
+DOCKER_BIN="$SUDO docker"
 
 echo "Configured modules: $MODULES"
 MODULES=$(

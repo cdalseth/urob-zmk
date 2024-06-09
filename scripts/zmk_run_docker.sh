@@ -57,8 +57,8 @@ done
 # Set defaults
 [[ -z $ZEPHYR_VERSION ]] && ZEPHYR_VERSION="3.5"
 
-[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="$HOME/zmk"
-[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="$HOME/zmk-config"
+[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="$HOME/git/zmk"
+[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="$HOME/git/urob-zmk"
 
 [[ -z $DOCKER_ZMK_DIR ]] && DOCKER_ZMK_DIR="/workspace/zmk"
 [[ -z $DOCKER_CONFIG_DIR ]] && DOCKER_CONFIG_DIR="/workspace/zmk-config"
