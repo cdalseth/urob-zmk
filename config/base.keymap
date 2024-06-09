@@ -22,7 +22,7 @@
 #include "extra_keys.h"
 
 #define XXX &none
-#define XXX &trans
+#define ___ &trans
 
 /* Global settings */
 
